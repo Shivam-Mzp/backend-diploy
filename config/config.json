@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "shivam",
+    "database": "xcibil-admin-panel",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {
+    "username": "postgres",
+    "password": "shivam",
+    "database": "xcibil-admin-panel",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "postgres",
+    "password": "shivam",
+    "database": "xcibil-admin-panel",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  }
+}

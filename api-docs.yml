@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  title: XCIBIL Admin Panel Backend APIs
+  description: API for XCIBIL Backend
+  version: 1.0.0
+
+servers:
+  - url: "http://localhost:3030/"
+
+tags:
+  - name: CMS_AboutUs_Profile
+    description: Endpoints related to CMS_AboutUs_Profile
+
+paths:
+  /aboutus:
+    post:
+      tags:
+        - CMS_AboutUs_Profile
+      summary: Create a new CMS_AboutUs_Profile
+      requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMS_AboutUs_Profile'
+      responses:
+        200:
+          description: OK
+
+  /api/users:
+    get:
+      tags:
+        - CMS_AboutUs_Profile
+      summary: Get all CMS_AboutUs_Profile
+      responses:
+        200:
+          description: Array of CMS_AboutUs_Profile
+          application/json:
+            schema:
+              type: array
+              items:
+                  $ref: '#/components/schemas/CMS_AboutUs_Profile'
+
+  /aboutus/{:id}:
+    get:
+      tags:
+        - CMS_AboutUs_Profile
+      summary: Get CMS_AboutUs_Profile by ID
+      parameters:
+        - in: path
+          name: :id
+          required: true
+      responses:
+        200:
+          description: Record you want
+          application/json:
+              schema:
+                type: array
+    delete:
+      tags:
+        - CMS_AboutUs_Profile
+      summary: Delete CMS_AboutUs_Profile
+      parameters:
+        - in: path
+          name: :id
+          required: true
+      responses:
+        200:
+          description: Record Deleted
+          application/json:
+              schema:
+                type: array
+    put:
+      tags:
+        - CMS_AboutUs_Profile
+      summary: Update CMS_AboutUs_Profile
+      parameters:
+        - in: path
+          name: :id
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMS_AboutUs_Profile'
+      responses:
+      200:
+        description: OK
+
+components:
+  schemas:
+    CMS_AboutUs_Profile:
+      type: object
+      required:
+        - Banner
+        - Content
+        - longContent
+      properties:
+        Banner:
+          type: string
+        Content:
+          type: string
+        longContent:
+          type: string
